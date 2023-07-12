@@ -290,6 +290,11 @@ public class JREUtils {
         if(LOCAL_RENDERER != null) userArgs.add("-Dorg.lwjgl.opengl.libname=" + graphicsLib);
 
         userArgs.addAll(JVMArgs);
+        Log.i("downthecropDebug","Launch args");
+        for(int i = 0; i < userArgs.toArray().length; i++){
+            Log.i("downthecropDebug",userArgs.get(i));
+
+        }
         activity.runOnUiThread(() -> Toast.makeText(activity, activity.getString(R.string.autoram_info_msg,LauncherPreferences.PREF_RAM_ALLOCATION), Toast.LENGTH_SHORT).show());
         System.out.println(JVMArgs);
 

@@ -201,10 +201,11 @@ public final class Tools {
         }
         javaArgList.addAll(Arrays.asList(getMinecraftJVMArgs(versionId, gamedir)));
         javaArgList.add("-cp");
-        javaArgList.add(getLWJGL3ClassPath() + ":" + launchClassPath);
+        javaArgList.add(getLWJGL3ClassPath()+":"+Tools.DIR_DATA+"/lwjgl-glfw.jar");
+        javaArgList.add("HelloWorld");
 
-        javaArgList.add(versionInfo.mainClass);
-        javaArgList.addAll(Arrays.asList(launchArgs));
+        //javaArgList.add(versionInfo.mainClass);
+        //javaArgList.addAll(Arrays.asList(launchArgs));
         // ctx.appendlnToLog("full args: "+javaArgList.toString());
         String args = LauncherPreferences.PREF_CUSTOM_JAVA_ARGS;
         if(Tools.isValidString(minecraftProfile.javaArgs)) args = minecraftProfile.javaArgs;
